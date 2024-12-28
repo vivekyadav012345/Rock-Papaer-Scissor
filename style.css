@@ -1,0 +1,501 @@
+/* General reset and layout styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Finger Paint", cursive, sans-serif;
+  background-color: #8cc461;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 100vh; */
+  background-color: #8cc461;
+}
+
+.heading-container {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between; /* Ensure space between heading and score containers */
+  width: 80%; /* Reduced width */
+  max-width: 1000px; /* Max width reduced */
+  padding: 10px 15px; /* Reduced padding */
+  border: 5px solid white;
+  border-radius: 5px;
+  margin-top: 20px;
+  gap: 10px; /* Space between child elements */
+  flex-wrap: nowrap;
+}
+
+.heading-container h2 {
+  text-align: left;
+  font-size: 1rem; /* Default font size for h2 */
+  text-transform: uppercase;
+  font-family: "Lilita One", cursive;
+  margin-right: 20px; /* Space between heading and score containers */
+  flex-grow: 1; /* Allow heading to grow */
+}
+
+/* Grouping Score Containers Together */
+.score-group {
+  display: flex;
+  gap: 10px; /* 10px space between the score containers */
+  align-items: center;
+  flex-shrink: 0; /* Prevent score containers from shrinking */
+}
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #182343;
+  padding: 10px 15px;
+  font-size: 1.2rem; /* Default font size for score container */
+  border-radius: 8px;
+  font-weight: bold;
+  min-width: 100px;
+  white-space: nowrap; /* Prevent text from wrapping */
+  flex-grow: 0;
+}
+#ai-score {
+  font-size: 3rem; /* Default font size for h2 */
+  text-transform: uppercase;
+  font-family: "Lilita One", cursive;
+  margin-right: 20px; /* Space between heading and score containers */
+  flex-grow: 1; /* Allow heading to grow */
+}
+#player-score {
+  font-size: 3rem; /* Default font size for h2 */
+  text-transform: uppercase;
+  font-family: "Lilita One", cursive;
+  margin-right: 20px; /* Space between heading and score containers */
+  flex-grow: 1; /* Allow heading to grow */
+}
+
+.game-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 130px;
+  margin-top: 60px;
+  border-radius: 50%;
+  position: relative;
+
+  /* "paper"
+    "scissors"; */
+}
+.choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 130px;
+  margin-top: 60px;
+  border-radius: 50%;
+}
+
+.choices2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.choice,
+.choice1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectable img {
+  height: 79px;
+  width: 79px;
+  background-color: white;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 20px;
+}
+
+.line {
+  display: flex;
+  width: 133px;
+  border-block-start: 15px solid #000000a3;
+  position: absolute;
+  top: 43px;
+}
+
+.line1 {
+  display: flex;
+  width: 120px;
+  border-block-start: 15px solid #000000a3;
+  position: absolute;
+  transform: rotate(304deg) translate(-73px, 133px);
+}
+
+.line2 {
+  display: flex;
+  width: 113px;
+  border-block-start: 15px solid #000000a3;
+  position: absolute;
+  transform: rotate(236deg) translate(69px, -34px);
+}
+
+.selectable {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 2rem;
+  width: 100px;
+  height: 100px;
+  border: 10px solid #5f6f8a;
+  border-radius: 50%;
+  color: #1e3352;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  margin-bottom: 10px;
+}
+
+.selectable:hover {
+  transform: scale(1.1);
+  background-color: #5f6f8a;
+}
+
+.rock {
+  border-color: #dc3d59;
+  grid-area: rock; /* Assigning each element to its area */
+  z-index: 2;
+}
+
+.paper {
+  border-color: #536ff4;
+  grid-area: paper;
+  z-index: 2;
+}
+
+.scissors {
+  border-color: #eba61f;
+  grid-area: scissors;
+  z-index: 2;
+}
+
+.winnerCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10rem;
+  text-align: center;
+}
+
+/* #ai-results { */
+/* position: absolute; Set the element to absolute positioning */
+/* bottom: 20%; Align to the bottom */
+/* right: 30%; Align to the right */
+/* } */
+#user-results {
+  /* position: absolute; Position absolutely */
+  /* position: absolute; Set the element to absolute positioning */
+  /* bottom: 20%; Align to the bottom */
+  /* left: 30%; Align to the right */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* gap: 130px; */
+  /* margin-top: 60px; */
+  border-radius: 50%;
+}
+
+.ball1 {
+  display: flex;
+  justify-content: space-evenly;
+  /* margin-top: 166px; */
+  transform: translate(0px, 128px);
+}
+
+.outcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  margin-top: -2rem;
+  font-size: 1rem;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+#won-text {
+  /* margin-top: -2rem;
+    font-size: 1rem;
+    padding: 10px 20px; */
+  margin-bottom: 36px;
+  /* position: absolute; */
+  bottom: 15%;
+  right: 47%;
+  cursor: pointer; /* Align to the right */
+  transform: translate(0, 80px);
+  /* background-color: white; /* Background color for visibility */
+  /* color: black; Text color */
+  /* cursor: pointer; */
+}
+
+#reset {
+  margin-top: -2rem;
+  font-size: 1rem;
+  padding: 10px 20px;
+  /* position: absolute; Set the element to absolute positioning */
+  bottom: 10%; /* Align to the bottom */
+  right: 45%; /* Align to the right */
+  background-color: white; /* Background color for visibility */
+  color: black; /* Text color */
+  cursor: pointer;
+  border-radius: 13px;
+  letter-spacing: 2px;
+  transform: translate(0, 75px);
+}
+
+#next {
+  margin-top: 20rem;
+  font-size: 1rem;
+  padding: 10px 20px;
+  position: absolute; /* Set the element to absolute positioning */
+  bottom: 0; /* Align to the bottom */
+  right: 0; /* Align to the right */
+  background-color: white; /* Background color for visibility */
+  color: black; /* Text color */
+  /* padding: 10px; Padding */
+  cursor: pointer;
+}
+.hurray-message {
+  display: none; /* Hidden initially */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  text-align: center;
+  color: yellow;
+  font-size: 1.5rem;
+}
+
+.hide {
+  display: none;
+}
+
+.next-button {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #5f6f8a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Desktop view (>= 1024px) */
+@media (min-width: 1024px) {
+  .heading-container {
+    flex-direction: row; /* Align heading on the left and score containers on the right */
+    align-items: center;
+    justify-content: space-between; /* Space between heading and score containers */
+  }
+
+  /* Dynamic resizing for heading */
+  .heading-container h2 {
+    font-size: calc(
+      1.6rem + 1vw
+    ); /* Adjust font size based on viewport width */
+    flex-grow: 1; /* Allow heading to take up available space */
+  }
+
+  /* Dynamic resizing for score containers */
+  .score-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .score-container {
+    font-size: calc(
+      1rem + 0.5vw
+    ); /* Adjust font size based on viewport width */
+    padding: calc(8px + 0.5vw) calc(10px + 0.5vw);
+  }
+}
+.hurray-container hide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.cup {
+  transform: translate(0, -164px);
+  display: flex;
+  justify-content: center;
+}
+
+.wonBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+h1 {
+  font-size: 91px;
+  font-weight: 600;
+  transform: translate(0px, -173px);
+  letter-spacing: 6px;
+}
+
+h3 {
+  font-weight: 600;
+  transform: translate(0px, -164px);
+  font-size: 41px;
+  letter-spacing: 4px;
+}
+
+#play-again {
+  transform: translate(0px, -113px);
+  width: 175px;
+  height: 44px;
+  border-radius: 9px;
+  color: #6b6b6b;
+  outline-width: 0;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.ruleBut {
+  margin: 0px 20px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 2rem 0.5rem 0;
+  gap: 30px;
+}
+
+.rule {
+  padding: 8px 30px;
+  border: 2px solid #ffffff;
+  outline: none;
+  background: transparent;
+  font-size: 21px;
+  letter-spacing: 3px;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  /* position: absolute; */
+  bottom: 0;
+  right: 12%;
+  transform: translate(0, 101px);
+}
+
+.ruleCont {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* rulebox NONE */
+.ruleBox {
+  display: block;
+  width: 303px;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #004429;
+  padding: 10px 25px;
+  border: 10px solid white;
+  /* transform: translate(360px, -300px); */
+  position: absolute; /* Set the element to absolute positioning */
+  bottom: 10%; /* Align to the bottom */
+  right: 1%; /* Align to the right */
+}
+
+.ruleContent {
+  color: white;
+  font-size: 29px;
+  margin-bottom: 36px;
+}
+
+ul {
+  font-weight: 400;
+  font-size: 13px;
+  color: white;
+}
+
+ul li::before {
+  list-style-type: square;
+  color: yellow;
+  font-weight: bold;
+  display: inline-block;
+}
+li {
+  margin-bottom: 16px;
+}
+
+.close {
+  width: 69px;
+  height: 69px;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 58px;
+  border: 6px solid white;
+  /* transform: translate(230px, -410px); */
+  position: absolute; /* Set the element to absolute positioning */
+  bottom: 91%; /* Align to the bottom */
+  right: -7%; /* Align to the right */
+}
+/* Remove mobile-specific media queries for desktop-only view */
+
+.inner-circle {
+  box-shadow: 0px 0px 18px 25px darkgreen;
+  border-radius: 50%;
+}
+.mid-circle {
+  box-shadow: 0px 0px 18px 50px rgb(40, 159, 40);
+  border-radius: 50%;
+}
+
+.outer-circle {
+  box-shadow: 0px 0px 18px 80px rgb(91, 170, 91);
+  border-radius: 50%;
+}
+
+.one {
+  display: flex;
+  justify-content: center;
+  transform: translate(0px, 39px);
+}
+.hidden {
+  display: none;
+}
+.open {
+  display: block;
+}
